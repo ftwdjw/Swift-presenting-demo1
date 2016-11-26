@@ -8,7 +8,7 @@
 
 import UIKit
 
-
+  var count = 0
 
 class ViewController: UIViewController, ModalViewController1Protocol {
     @IBOutlet weak var resultLabel: UILabel!

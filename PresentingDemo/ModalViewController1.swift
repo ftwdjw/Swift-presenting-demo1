@@ -15,7 +15,7 @@ protocol ModalViewController1Protocol : class {
 class ModalViewController1: UIViewController {
     
     
-    var count = 0
+  
 
     @IBOutlet weak var titleLabel: UILabel!
     var titleText : String = "Default Title"
