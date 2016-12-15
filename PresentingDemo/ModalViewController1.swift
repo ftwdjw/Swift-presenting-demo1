@@ -9,15 +9,22 @@
 import UIKit
 
 protocol ModalViewController1Protocol : class {
-    func dismissWithStringData(_ str : String)
+    //func dismissWithStringData(_ str : String)
+    func dismissWithImage(_ image : UIImage)
 }
 
 class ModalViewController1: UIViewController {
     
-    
+    var photo = UIImage.init(named: "picasso1")
   
 
     @IBOutlet weak var titleLabel: UILabel!
+    
+    
+    
+    @IBOutlet var imageView: UIImageView!
+    
+    
     var titleText : String = "Default Title"
     
     weak var delegate : ModalViewController1Protocol?
@@ -27,6 +34,7 @@ class ModalViewController1: UIViewController {
 
         // Do any additional setup after loading the view.
         titleLabel.text = titleText
+        imageView.image=photo
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,7 +56,8 @@ class ModalViewController1: UIViewController {
     @IBAction func doDismiss(_ sender: AnyObject) {
         
         count += 1
-        delegate?.dismissWithStringData("Message from DEMO 1 count=\(count)")
+        //delegate?.dismissWithStringData("Message from DEMO 1 count=\(count)")
+         delegate?.dismissWithImage(photo!)
     }
 
 }

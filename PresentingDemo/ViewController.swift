@@ -11,11 +11,21 @@ import UIKit
   var count = 0
 
 class ViewController: UIViewController, ModalViewController1Protocol {
+    
+    
+    var photo = UIImage.init(named: "picasso")
+    
     @IBOutlet weak var resultLabel: UILabel!
+    
+    
+    @IBOutlet var imageView: UIImageView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        imageView.image=photo
+        print("view did load done")
 
     }
 
@@ -32,6 +42,7 @@ class ViewController: UIViewController, ModalViewController1Protocol {
                 
                 vc.titleText = "DEMO 1"
                 vc.delegate = self
+                print("segue done")
             }
             
         }
@@ -39,10 +50,22 @@ class ViewController: UIViewController, ModalViewController1Protocol {
     }
     
     //Call back
+    /*
     func dismissWithStringData(_ str: String) {
       self.dismiss(animated: true) {
          self.resultLabel.text = str
+         print("dismiss with string done")
       }
     }
+ */
+    
+    func dismissWithImage(_ image: UIImage) {
+        self.dismiss(animated: true) {
+            self.imageView.image = image
+            print("dismiss with image done")
+        }
+
+    }
+
 }
 
