@@ -10,9 +10,11 @@ import UIKit
 
   var count = 0
 
+//this is the presenting view controller
+
 class ViewController: UIViewController, ModalViewController1Protocol {
     
-    
+    //load the inital photo
     var photo = UIImage.init(named: "picasso")
     
     @IBOutlet weak var resultLabel: UILabel!
@@ -34,6 +36,7 @@ class ViewController: UIViewController, ModalViewController1Protocol {
         // Dispose of any resources that can be recreated.
     }
     
+    //set up segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
         if segue.identifier == "DEMO1" {
@@ -59,8 +62,12 @@ class ViewController: UIViewController, ModalViewController1Protocol {
     }
  */
     
+      //Call back
+    
     func dismissWithImage(_ image: UIImage) {
         self.dismiss(animated: true) {
+            
+            //load the new image from the presented view controller
             self.imageView.image = image
             print("dismiss with image done")
         }

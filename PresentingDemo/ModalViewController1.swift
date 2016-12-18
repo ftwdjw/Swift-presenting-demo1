@@ -8,6 +8,7 @@
 
 import UIKit
 
+//this is the protocool to save the image to the presenting view
 protocol ModalViewController1Protocol : class {
     //func dismissWithStringData(_ str : String)
     func dismissWithImage(_ image : UIImage)
@@ -15,6 +16,7 @@ protocol ModalViewController1Protocol : class {
 
 class ModalViewController1: UIViewController {
     
+    //this is the photo of the presenting view
     var photo = UIImage.init(named: "picasso1")
   
 
@@ -57,6 +59,7 @@ class ModalViewController1: UIViewController {
         
         count += 1
         //delegate?.dismissWithStringData("Message from DEMO 1 count=\(count)")
+        //send the photo back to the presenting view
          delegate?.dismissWithImage(photo!)
     }
 
